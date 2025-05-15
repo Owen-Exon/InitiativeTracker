@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
+        <title>Initiative Tracker</title>
+        <link rel="stylesheet" href="styles/styles.css">
+    </head>
+
+    <body>
+        <h1 class="center-text">Initiative Tracker</h1>
+        <table>
+            <tbody>
+                <tr>
+                    <th scope="col">-</th>
+                    <th scope="col">Turn</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">AC</th>
+                    <th scope="col">Str</th>
+                    <th scope="col">Dex</th>
+                    <th scope="col">Con</th>
+                    <th scope="col">Wis</th>
+                    <th scope="col">Int</th>
+                    <th scope="col">Cha</th>
+                    <th scope="col">Damage</th>
+                    <th scope="col">Health</th>
+                    <th scope="col">Statblock</th>
+                    <th scope="col">Stats</th>
+                    <th scope="col">Active</th>
+                </tr>
+            </tbody>
+        </table>
+        <div class="bottomButtons">
+            <button onclick="addActor()" type="button">Add Actor</button>
+            <button onclick="sortActors()" type="button">Sort</button>
+            <button onclick="saveGrid()" type="button">Convert To JS</button>
+            <button onclick="loadGrid()" type="button">Convert From JS</button>
+        </div>
+        <textarea class="jsContent" id="jsContent" placeholder="JS"></textarea>
+        <script src="Data/Data0.js"></script>
+        <script src="Data/Data1.js"></script>
+        <script src="Data/Data2.js"></script>
+        <script src="Data/Data3.js"></script>
+        <script src="script.js"></script>
+    </body>
+
+</html>
