@@ -13,6 +13,8 @@ function updateBlock(actorNum) {
         document.getElementsByClassName("actorImage"+actorNum)[0].children[0].children[0].innerHTML = monArray[document.getElementById("Statblock"+actorNum).value.split(":")[1]]
       }
     });
+  } else if (document.getElementById("Statblock"+actorNum).value.split(":")[0]=="https"){
+    document.getElementsByClassName("actorImage"+actorNum)[0].children[0].children[0].innerHTML = `<iframe Title="Embed-${actorNum}" src="${document.getElementById("Statblock"+actorNum).value}#col" style="width:100%; height:80vh;"></iframe>`
   } else {
     document.getElementsByClassName("actorImage"+actorNum)[0].children[0].children[0].innerHTML = document.getElementById("Statblock"+actorNum).value
   }
@@ -169,7 +171,7 @@ function sortActors() {
     tempActors.push(document.getElementById("actor"+turn[1]).outerHTML)
     tempActorsImage.push(document.getElementsByClassName("actorImage"+turn[1])[0].outerHTML)
   });
-  document.querySelector("table").children[0].innerHTML = "<tr><th></th><th>Turn</th><th>Name</th><th>AC</th><th>Str</th><th>Dex</th><th>Con</th><th>Wis</th><th>Int</th><th>Cha</th><th>Damage</th><th>Health</th><th>Statblock</th><th>Stats</th><th>Active</th></tr>"
+  document.querySelector("table").children[0].innerHTML = "<tr><th></th><th>Turn</th><th>Name</th><th>AC</th><th>Str</th><th>Dex</th><th>Con</th><th>Wis</th><th>Int</th><th>Cha</th><th>Damage</th><th>Health</th><th>Statblock (L:)</th><th>Stats</th><th>Active</th></tr>"
   for (let i = 0; i < tempActors.length; i++) {
     document.querySelector("table").children[0].innerHTML += tempActors[i]
     document.querySelector("table").children[0].innerHTML += tempActorsImage[i]
